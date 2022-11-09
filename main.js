@@ -15,7 +15,7 @@ balloonFullSequence.addEventListener('complete', () => {
 });
 
 function animatebodymovin(duration) {
-    const scrollPosition = window.scrollY + 180;
+    const scrollPosition = window.scrollY + 200;
     const maxFrames = balloonFullSequence.totalFrames;
 
     const frame = (maxFrames / 100) * (scrollPosition / (duration / 100));
