@@ -1,4 +1,5 @@
 const lottieContainer = document.getElementById('container');
+let animationIsComplete = false;
 
 const balloonFullSequence = bodymovin.loadAnimation({
     container: lottieContainer,
@@ -9,8 +10,12 @@ const balloonFullSequence = bodymovin.loadAnimation({
     name: 'Full Sequence',
 });
 
+balloonFullSequence.addEventListener('complete', () => {
+    animationIsComplete = true;
+});
+
 function animatebodymovin(duration) {
-    const scrollPosition = window.scrollY;
+    const scrollPosition = window.scrollY + 180;
     const maxFrames = balloonFullSequence.totalFrames;
 
     const frame = (maxFrames / 100) * (scrollPosition / (duration / 100));
@@ -18,6 +23,8 @@ function animatebodymovin(duration) {
     balloonFullSequence.goToAndStop(frame, true);
 }
 const onScroll = () => {
+    if (!animationIsComplete) return;
+
     animatebodymovin(2000);
 };
 
