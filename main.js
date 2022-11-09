@@ -10,18 +10,22 @@ const balloonFullSequence = bodymovin.loadAnimation({
     name: 'Full Sequence',
 });
 
-setTimeout(() => {
-    bodymovin.freeze();
-}, 2100);
+balloonFullSequence.addEventListener('DOMLoaded', () => {
+    setTimeout(() => {
+        bodymovin.freeze();
+    }, 2300);
+});
 
 function animatebodymovin() {
-    bodymovin.unfreeze();
+    const offset =
+        inner.getBoundingClientRect().top +
+        window.scrollY +
+        inner.getBoundingClientRect().height;
     const scrollPosition = window.scrollY;
     const maxFrames = balloonFullSequence.totalFrames - 70;
+    const frame = Math.ceil(maxFrames * (scrollPosition / offset) + 70);
 
-    const frame =
-        maxFrames * (scrollPosition / inner.getBoundingClientRect().height) +
-        70;
+    bodymovin.unfreeze();
 
     balloonFullSequence.goToAndStop(frame, true);
 }
