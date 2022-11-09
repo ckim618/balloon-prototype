@@ -13,7 +13,7 @@ const balloonFullSequence = bodymovin.loadAnimation({
 balloonFullSequence.addEventListener('DOMLoaded', () => {
     setTimeout(() => {
         bodymovin.freeze();
-    }, 2300);
+    }, 2100);
 });
 
 function animatebodymovin() {
