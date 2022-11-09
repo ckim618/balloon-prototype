@@ -1,4 +1,5 @@
 const lottieContainer = document.getElementById('container');
+const inner = document.querySelector('.inner');
 
 const balloonFullSequence = bodymovin.loadAnimation({
     container: lottieContainer,
@@ -13,19 +14,19 @@ setTimeout(() => {
     bodymovin.freeze();
 }, 2100);
 
-function animatebodymovin(duration) {
+function animatebodymovin() {
     bodymovin.unfreeze();
-    const scrollPosition = window.scrollY + 200;
-    const maxFrames = balloonFullSequence.totalFrames;
+    const scrollPosition = window.scrollY;
+    const maxFrames = balloonFullSequence.totalFrames - 70;
 
-    const frame = (maxFrames / 100) * (scrollPosition / (duration / 100));
+    const frame =
+        maxFrames * (scrollPosition / inner.getBoundingClientRect().height) +
+        70;
 
     balloonFullSequence.goToAndStop(frame, true);
 }
 const onScroll = () => {
-    // if (!animationIsComplete) return;
-
-    animatebodymovin(2000);
+    animatebodymovin();
 };
 
 document.addEventListener('scroll', onScroll);
