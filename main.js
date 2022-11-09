@@ -1,5 +1,4 @@
 const lottieContainer = document.getElementById('container');
-let animationIsComplete = false;
 
 const balloonFullSequence = bodymovin.loadAnimation({
     container: lottieContainer,
@@ -13,16 +12,6 @@ const balloonFullSequence = bodymovin.loadAnimation({
 setTimeout(() => {
     bodymovin.freeze();
 }, 2300);
-
-console.log(bodymovin);
-
-balloonFullSequence.addEventListener('complete', () => {
-    animationIsComplete = true;
-});
-
-// while (!animationIsComplete) {
-//     console.log(balloonFullSequence.progress);
-// }
 
 function animatebodymovin(duration) {
     bodymovin.unfreeze();
