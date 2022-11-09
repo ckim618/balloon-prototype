@@ -11,7 +11,7 @@ const balloonFullSequence = bodymovin.loadAnimation({
 
 setTimeout(() => {
     bodymovin.freeze();
-}, 2300);
+}, 2100);
 
 function animatebodymovin(duration) {
     bodymovin.unfreeze();
