@@ -22,8 +22,8 @@ function animatebodymovin() {
         window.scrollY +
         inner.getBoundingClientRect().height;
     const scrollPosition = window.scrollY;
-    const maxFrames = balloonFullSequence.totalFrames - 70;
-    const frame = Math.ceil(maxFrames * (scrollPosition / offset) + 70);
+    const maxFrames = balloonFullSequence.totalFrames - 90;
+    const frame = Math.ceil(maxFrames * (scrollPosition / offset) + 90);
 
     bodymovin.unfreeze();
 
