@@ -3,7 +3,7 @@ const inner = document.querySelector('.inner');
 
 const balloonFullSequence = bodymovin.loadAnimation({
     container: lottieContainer,
-    path: '/lottie/22-1109_Coachella_balloon-line.json',
+    path: '/lottie/22-1118_Coachella_balloon-line.json',
     renderer: 'svg',
     loop: false,
     autoplay: true,
